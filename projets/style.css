@@ -1,0 +1,775 @@
+/* =========================================================
+   ABRACADAWEB — RÉALISATIONS
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   VARIABLES
+--------------------------------------------------------- */
+
+:root {
+  --bg: #111214;
+
+  --bg-soft: #15161a;
+
+  --text: #eeeeeb;
+
+  --text-soft: #8d8e92;
+
+  --text-muted: #55565a;
+
+  --accent: #7b6cff;
+
+  --accent-light: #978cff;
+
+  --border: rgba(255, 255, 255, 0.08);
+}
+
+/* ---------------------------------------------------------
+   RESET
+--------------------------------------------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+
+  color: var(--text);
+
+  font-family: "DM Sans", sans-serif;
+
+  overflow-x: hidden;
+}
+
+/* ---------------------------------------------------------
+   PORTFOLIO
+--------------------------------------------------------- */
+
+.portfolio {
+  position: relative;
+
+  min-height: 100vh;
+
+  padding: 100px 7vw 80px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 10%,
+      rgba(123, 108, 255, 0.1),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 90% 70%,
+      rgba(123, 108, 255, 0.045),
+      transparent 30%
+    ),
+    var(--bg);
+}
+
+/* ---------------------------------------------------------
+   GRID BACKGROUND
+--------------------------------------------------------- */
+
+.portfolio-grid {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.18;
+
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+
+  background-size: 80px 80px;
+
+  mask-image: linear-gradient(to bottom, black, transparent 80%);
+}
+
+/* ---------------------------------------------------------
+   BACKGROUND GLOW
+--------------------------------------------------------- */
+
+.portfolio-glow {
+  position: absolute;
+
+  width: 550px;
+
+  height: 550px;
+
+  top: 200px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  border-radius: 50%;
+
+  background: rgba(123, 108, 255, 0.035);
+
+  filter: blur(120px);
+
+  pointer-events: none;
+}
+
+/* ---------------------------------------------------------
+   HEADER
+--------------------------------------------------------- */
+
+.portfolio-header {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 1200px;
+
+  margin: 0 auto 150px;
+}
+
+/* ---------------------------------------------------------
+   INDEX
+--------------------------------------------------------- */
+
+.section-index {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  margin-bottom: 25px;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.2em;
+
+  color: var(--accent);
+}
+
+.section-index i {
+  display: block;
+
+  width: 45px;
+
+  height: 1px;
+
+  background: var(--accent);
+
+  box-shadow: 0 0 10px rgba(123, 108, 255, 0.6);
+}
+
+/* ---------------------------------------------------------
+   TITLE
+--------------------------------------------------------- */
+
+.portfolio-header h1 {
+  margin: 0;
+
+  font-family: "", serif;
+
+  font-size: clamp(3rem, 4vw, 10rem);
+
+  font-weight: 600;
+
+  line-height: 0.85;
+
+  letter-spacing: -0.02em;
+
+  text-transform: uppercase;
+
+  color: var(--text);
+
+  text-shadow:
+    0 0 1px #fff,
+    0 0 18px rgba(123, 108, 255, 0.377),
+    0 0 45px rgba(123, 108, 255, 0.37);
+}
+
+/* ---------------------------------------------------------
+   INTRO
+--------------------------------------------------------- */
+
+.section-intro {
+  max-width: 520px;
+
+  margin-top: 35px;
+
+  margin-left: 5px;
+
+  color: var(--text-soft);
+
+  font-size: 15px;
+
+  line-height: 1.7;
+
+  letter-spacing: -0.01em;
+
+  text-shadow:
+    0 0 1px #fff,
+    0 0 18px rgba(123, 108, 255, 0.123),
+    0 0 45px rgba(123, 108, 255, 0.137);
+}
+
+/* ---------------------------------------------------------
+   PROJECTS
+--------------------------------------------------------- */
+
+.projects {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 1200px;
+
+  margin: 0 auto;
+}
+
+/* ---------------------------------------------------------
+   PROJECT
+--------------------------------------------------------- */
+
+.project {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.35fr)
+    minmax(300px, 0.65fr);
+
+  align-items: center;
+
+  gap: 8vw;
+
+  margin-bottom: 180px;
+}
+
+/* Alternance */
+
+.project-reverse {
+  grid-template-columns:
+    minmax(300px, 0.65fr)
+    minmax(0, 1.35fr);
+}
+
+/* Inversion visuelle */
+
+.project-reverse .project-visual {
+  order: 2;
+}
+
+.project-reverse .project-info {
+  order: 1;
+}
+
+/* ---------------------------------------------------------
+   PROJECT VISUAL
+--------------------------------------------------------- */
+
+.project-visual {
+  position: relative;
+
+  padding: 35px 0;
+}
+
+/* ---------------------------------------------------------
+   PROJECT NUMBER
+--------------------------------------------------------- */
+
+.project-number {
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 11px;
+
+  letter-spacing: 0.18em;
+
+  color: var(--accent);
+
+  opacity: 0.75;
+}
+
+/* ---------------------------------------------------------
+   PROJECT FRAME
+--------------------------------------------------------- */
+
+.project-frame {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  border: 1px solid var(--border);
+
+  background: #0b0c0e;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(123, 108, 255, 0.02);
+
+  transition:
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.5s ease,
+    box-shadow 0.7s ease;
+}
+
+/* Petit cadre décoratif */
+
+.project-frame::before {
+  content: "";
+
+  position: absolute;
+
+  top: -1px;
+
+  left: -1px;
+
+  width: 90px;
+
+  height: 90px;
+
+  border-top: 1px solid var(--accent);
+
+  border-left: 1px solid var(--accent);
+
+  z-index: 3;
+
+  opacity: 0.7;
+
+  pointer-events: none;
+}
+
+.project-frame::after {
+  content: "";
+
+  position: absolute;
+
+  right: -1px;
+
+  bottom: -1px;
+
+  width: 90px;
+
+  height: 90px;
+
+  border-right: 1px solid var(--accent);
+
+  border-bottom: 1px solid var(--accent);
+
+  z-index: 3;
+
+  opacity: 0.7;
+
+  pointer-events: none;
+}
+
+/* ---------------------------------------------------------
+   IMAGE
+--------------------------------------------------------- */
+
+.project-frame img {
+  display: block;
+
+  width: 100%;
+
+  height: auto;
+
+  filter: grayscale(75%);
+
+  transform: scale(1.01);
+
+  transition:
+    filter 0.8s ease,
+    transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ---------------------------------------------------------
+   IMAGE OVERLAY
+--------------------------------------------------------- */
+
+.image-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  padding: 25px;
+
+  background: linear-gradient(to top, rgba(17, 18, 20, 0.85), transparent 45%);
+
+  opacity: 0;
+
+  transition: opacity 0.5s ease;
+
+  z-index: 2;
+
+  color: white;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.15em;
+
+  text-transform: uppercase;
+}
+
+/* ---------------------------------------------------------
+   VISUAL HOVER
+--------------------------------------------------------- */
+
+.project-frame:hover {
+  transform: translateY(-8px);
+
+  border-color: rgba(123, 108, 255, 0.45);
+
+  box-shadow:
+    0 35px 90px rgba(0, 0, 0, 0.55),
+    0 0 40px rgba(123, 108, 255, 0.08);
+}
+
+.project-frame:hover img {
+  filter: grayscale(0);
+
+  transform: scale(1.04);
+}
+
+.project-frame:hover .image-overlay {
+  opacity: 1;
+}
+
+/* ---------------------------------------------------------
+   ARROW
+--------------------------------------------------------- */
+
+.image-overlay .arrow {
+  font-size: 20px;
+
+  font-weight: 300;
+}
+
+/* ---------------------------------------------------------
+   PROJECT INFO
+--------------------------------------------------------- */
+
+.project-info {
+  position: relative;
+
+  padding: 20px 0;
+}
+
+/* ---------------------------------------------------------
+   CATEGORY
+--------------------------------------------------------- */
+
+.project-category {
+  display: inline-block;
+
+  margin-bottom: 18px;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+
+  color: var(--accent);
+}
+
+/* ---------------------------------------------------------
+   PROJECT TITLE
+--------------------------------------------------------- */
+
+.project-info h2 {
+  margin: 0 0 25px;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: clamp(2rem, 3.5vw, 3.5rem);
+
+  font-weight: 500;
+
+  line-height: 0.95;
+
+  letter-spacing: -0.055em;
+
+  color: var(--text);
+}
+
+/* ---------------------------------------------------------
+   DESCRIPTION
+--------------------------------------------------------- */
+
+.project-info p {
+  max-width: 480px;
+
+  margin-bottom: 30px;
+
+  color: var(--text-soft);
+
+  font-size: 14px;
+
+  line-height: 1.75;
+}
+
+/* ---------------------------------------------------------
+   TECHNOLOGIES
+--------------------------------------------------------- */
+
+.technologies {
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 9px;
+
+  margin-bottom: 30px;
+}
+
+.technologies img {
+  width: 25px;
+
+  height: 25px;
+
+  object-fit: contain;
+
+  filter: grayscale(100%);
+
+  opacity: 0.65;
+
+  transition:
+    filter 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.project:hover .technologies img {
+  filter: grayscale(0);
+
+  opacity: 1;
+}
+
+.technologies span {
+  padding: 5px 9px;
+
+  border: 1px solid rgba(123, 108, 255, 0.18);
+
+  color: var(--text-muted);
+
+  font-size: 8px;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+}
+
+/* ---------------------------------------------------------
+   PROJECT LINK
+--------------------------------------------------------- */
+
+.project-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 25px;
+
+  padding-bottom: 9px;
+
+  border-bottom: 1px solid rgba(123, 108, 255, 0.35);
+
+  color: var(--text);
+
+  text-decoration: none;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    gap 0.4s ease;
+}
+
+.project-link:hover {
+  color: var(--accent-light);
+
+  border-color: var(--accent);
+
+  gap: 35px;
+}
+
+/* ---------------------------------------------------------
+   BOTTOM
+--------------------------------------------------------- */
+
+.portfolio-bottom {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 1200px;
+
+  margin: 40px auto 0;
+
+  padding-top: 25px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+
+  display: flex;
+
+  justify-content: space-between;
+
+  font-size: 8px;
+
+  letter-spacing: 0.16em;
+
+  color: var(--text-muted);
+}
+
+/* ---------------------------------------------------------
+   RESPONSIVE TABLET
+--------------------------------------------------------- */
+
+@media (max-width: 900px) {
+  .portfolio {
+    padding: 80px 35px;
+  }
+
+  .portfolio-header {
+    margin-bottom: 100px;
+  }
+
+  .project,
+  .project-reverse {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+
+    margin-bottom: 120px;
+  }
+
+  .project-reverse .project-visual,
+  .project-reverse .project-info {
+    order: initial;
+  }
+
+  .project-info {
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    width: 100%;
+  }
+
+  .project-visual {
+    width: 100%;
+  }
+}
+
+/* ---------------------------------------------------------
+   RESPONSIVE MOBILE
+--------------------------------------------------------- */
+
+@media (max-width: 600px) {
+  .portfolio {
+    padding: 65px 20px 50px;
+  }
+
+  .portfolio-header {
+    margin-bottom: 80px;
+  }
+
+  .portfolio-header h1 {
+    font-size: clamp(3.2rem, 17vw, 5rem);
+  }
+
+  .section-intro {
+    font-size: 13px;
+
+    margin-top: 25px;
+  }
+
+  .project {
+    margin-bottom: 90px;
+  }
+
+  .project-visual {
+    padding-top: 30px;
+  }
+
+  .project-frame::before,
+  .project-frame::after {
+    width: 55px;
+
+    height: 55px;
+  }
+
+  .project-info h2 {
+    font-size: 2.3rem;
+  }
+
+  .project-info p {
+    font-size: 13px;
+  }
+
+  .image-overlay {
+    padding: 15px;
+
+    font-size: 8px;
+  }
+
+  .portfolio-bottom {
+    flex-direction: column;
+
+    gap: 12px;
+
+    line-height: 1.5;
+  }
+}
+
+/* ---------------------------------------------------------
+   ACCESSIBILITY
+--------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+
+    transition: none !important;
+
+    animation: none !important;
+  }
+}

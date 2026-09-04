@@ -1,0 +1,471 @@
+/* =========================================================
+   ABRACADAWEB — MAIN STYLE
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   RESET
+   --------------------------------------------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #111214;
+  color: #f2f2ef;
+  font-family: "DM Sans", sans-serif;
+}
+
+/* ---------------------------------------------------------
+   HERO
+   --------------------------------------------------------- */
+
+.hero {
+  position: relative;
+
+  min-height: 100vh;
+  width: 100%;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(105, 92, 255, 0.055),
+      transparent 38%
+    ),
+    #111214;
+}
+
+/* ---------------------------------------------------------
+   SUBTLE BACKGROUND GLOW
+   --------------------------------------------------------- */
+
+.hero::before {
+  content: "";
+
+  position: absolute;
+
+  width: 45vw;
+  height: 45vw;
+
+  max-width: 650px;
+  max-height: 650px;
+
+  border-radius: 50%;
+
+  background: rgba(104, 88, 255, 0.045);
+
+  filter: blur(100px);
+
+  pointer-events: none;
+}
+
+/* ---------------------------------------------------------
+   TOP INFORMATION
+   --------------------------------------------------------- */
+
+.hero-meta {
+  position: absolute;
+
+  top: 35px;
+  left: 45px;
+  right: 45px;
+
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+
+  z-index: 5;
+}
+
+/* ---------------------------------------------------------
+   FOOTER
+   --------------------------------------------------------- */
+
+.hero-footer {
+  position: absolute;
+
+  left: 45px;
+  right: 45px;
+  bottom: 35px;
+
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 9px;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+
+  z-index: 5;
+}
+
+/* ---------------------------------------------------------
+   SYNCHRONIZED ACCENT ANIMATION
+   --------------------------------------------------------- */
+
+/*
+   Les 4 textes utilisent exactement la même animation.
+
+   sombre
+      ↓
+   apparition
+      ↓
+   lumière
+      ↓
+   glow
+      ↓
+   disparition
+      ↓
+   sombre
+*/
+
+.hero-meta span,
+.hero-footer span {
+  color: rgba(123, 108, 255, 0.12);
+
+  opacity: 0.35;
+
+  animation: softGlow 8s ease-in-out infinite;
+
+  will-change: color, opacity, text-shadow;
+}
+
+/* ---------------------------------------------------------
+   ANIMATION
+   --------------------------------------------------------- */
+
+/* --------------------------------------------------------- HERO META + FOOTER — SOFT LIGHT ANIMATION --------------------------------------------------------- */
+.hero-meta span,
+.hero-footer span {
+  /* Couleur toujours visible */
+  color: rgba(123, 108, 255, 0.65); /* Toujours visible également */
+  opacity: 1;
+  animation: softLight 5s ease-in-out infinite;
+  will-change: color, text-shadow;
+} /* --------------------------------------------------------- SOFT LIGHT ANIMATION --------------------------------------------------------- */
+@keyframes softLight {
+  /* Intensité normale */
+  0% {
+    color: rgba(123, 108, 255, 0.55);
+    text-shadow: 0 0 4px rgba(123, 108, 255, 0.08);
+  } /* Éclaircissement progressif */
+  50% {
+    color: rgba(145, 132, 255, 1);
+    text-shadow:
+      0 0 8px rgba(123, 108, 255, 0.35),
+      0 0 18px rgba(123, 108, 255, 0.2),
+      0 0 30px rgba(123, 108, 255, 0.1);
+  } /* Retour progressif */
+  100% {
+    color: rgba(123, 108, 255, 0.55);
+    text-shadow: 0 0 4px rgba(123, 108, 255, 0.08);
+  }
+}
+
+/* ---------------------------------------------------------
+   MAIN CONTENT
+   --------------------------------------------------------- */
+
+.hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  transform: translateY(-2vh);
+}
+
+/* ---------------------------------------------------------
+   BRAND
+   --------------------------------------------------------- */
+
+.brand {
+  position: relative;
+
+  width: 100%;
+
+  font-family: "DM Serif Display", serif;
+
+  letter-spacing: -0.05em;
+
+  font-size: clamp(3.5rem, 4vw, 12rem);
+
+  font-weight: 600;
+
+  line-height: 0.85;
+
+  letter-spacing: -0.075em;
+}
+
+/* Texte principal */
+
+.brand-main {
+  position: relative;
+
+  z-index: 2;
+
+  color: #eeeeeb;
+}
+
+/* Glow derrière le texte */
+
+.brand-glow {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  color: #7b6cff;
+
+  opacity: 0.32;
+
+  filter: blur(28px);
+
+  transform: scale(1.015);
+}
+
+/* ---------------------------------------------------------
+   TAGLINE
+   --------------------------------------------------------- */
+
+.tagline {
+  margin-top: 55px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: clamp(1.15rem, 2vw, 1.65rem);
+
+  line-height: 1.15;
+
+  font-weight: 400;
+
+  letter-spacing: -0.025em;
+
+  color: #8d8e92;
+}
+
+/* Accent du slogan */
+
+.tagline .accent {
+  position: relative;
+
+  color: #f0f0ed;
+
+  font-weight: 500;
+}
+
+/* Petit halo sur "du style" */
+
+.tagline .accent::after {
+  content: "";
+
+  position: absolute;
+
+  left: 10%;
+  right: 10%;
+  bottom: -4px;
+
+  height: 8px;
+
+  background: rgba(112, 96, 255, 0.18);
+
+  filter: blur(10px);
+
+  z-index: -1;
+}
+
+/* ---------------------------------------------------------
+   PROJECTS LINK
+   --------------------------------------------------------- */
+
+.projects-link {
+  position: absolute;
+
+  bottom: 75px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  z-index: 3;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 12px;
+
+  text-decoration: none;
+
+  color: #f0f0ed;
+
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease;
+}
+
+/* Texte */
+
+.projects-label {
+  position: relative;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.22em;
+
+  white-space: nowrap;
+}
+
+/* Ligne sous le texte */
+
+.projects-label::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -7px;
+
+  width: 0;
+  height: 1px;
+
+  background: #f0f0ed;
+
+  transition: width 0.4s ease;
+}
+
+/* Flèche */
+
+.projects-arrow {
+  font-size: 20px;
+
+  font-weight: 300;
+
+  line-height: 1;
+
+  transition: transform 0.4s ease;
+}
+
+/* ---------------------------------------------------------
+   HOVER
+   --------------------------------------------------------- */
+
+.projects-link:hover {
+  transform: translateX(-50%) translateY(-5px);
+}
+
+.projects-link:hover .projects-label::after {
+  width: 100%;
+}
+
+.projects-link:hover .projects-arrow {
+  transform: translateY(5px);
+}
+
+/* ---------------------------------------------------------
+   RESPONSIVE
+   --------------------------------------------------------- */
+
+@media (max-width: 700px) {
+  .hero-meta {
+    top: 25px;
+
+    left: 25px;
+    right: 25px;
+
+    font-size: 8px;
+  }
+
+  .hero-content {
+    width: 100%;
+
+    padding: 0 25px;
+  }
+
+  .brand {
+    font-size: clamp(3.5rem, 17vw, 7rem);
+
+    letter-spacing: -0.08em;
+  }
+
+  .tagline {
+    margin-top: 38px;
+
+    font-size: 1.15rem;
+  }
+
+  .projects-link {
+    bottom: 90px;
+  }
+
+  .hero-footer {
+    left: 25px;
+    right: 25px;
+
+    bottom: 25px;
+
+    font-size: 7px;
+  }
+
+  .hero-footer span:first-child {
+    display: none;
+  }
+}
+
+/* ---------------------------------------------------------
+   SMALL MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 400px) {
+  .brand {
+    font-size: 3.2rem;
+  }
+
+  .tagline {
+    font-size: 1rem;
+  }
+}
+
+/* ---------------------------------------------------------
+   ACCESSIBILITY
+   --------------------------------------------------------- */
+
+/* --------------------------------------------------------- ACCESSIBILITY --------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .hero-meta span,
+  .hero-footer span {
+    animation: none;
+    color: rgba(123, 108, 255, 0.7);
+    text-shadow: 0 0 5px rgba(123, 108, 255, 0.1);
+  }
+}
