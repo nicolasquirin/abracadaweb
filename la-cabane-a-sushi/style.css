@@ -1294,6 +1294,10 @@ footer {
     flex-direction: column;
     gap: 10px;
   }
+  .cuisto img {
+    margin-top: 40px;
+    margin-left: 40%;
+  }
 }
 @media (max-width: 670px) {
   .menu-grid {
@@ -1400,6 +1404,9 @@ footer {
     font-size: clamp(2rem, 8vw, 3.2rem);
     line-height: 1.05;
   }
+  .hero h1 {
+    font-size: clamp(1.5rem, 5.5vw, 2.5rem);
+  }
 }
 @media (max-width: 375px) {
   .menu-grid {
@@ -1447,6 +1454,9 @@ footer {
   .nav-cta {
     font-size: 8px;
     padding: 8px 52px;
+  }
+  .hero h1 {
+    font-size: clamp(0.5rem, 5.5vw, 2.5rem);
   }
 }
 
