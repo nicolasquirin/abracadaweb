@@ -413,7 +413,7 @@ body {
   }
 
   .brand {
-    font-size: clamp(3.5rem, 17vw, 7rem);
+    font-size: clamp(2.5rem, 7vw, 4rem);
 
     letter-spacing: -0.08em;
   }
@@ -436,23 +436,51 @@ body {
 
     font-size: 7px;
   }
-
-  .hero-footer span:first-child {
-    display: none;
-  }
 }
 
 /* ---------------------------------------------------------
    SMALL MOBILE
    --------------------------------------------------------- */
 
-@media (max-width: 400px) {
+@media (max-width: 420px) {
+  .hero-meta {
+    top: 25px;
+
+    left: 25px;
+    right: 25px;
+
+    font-size: 8px;
+  }
+
+  .hero-content {
+    width: 100%;
+
+    padding: 0 25px;
+  }
+
   .brand {
-    font-size: 3.2rem;
+    font-size: clamp(1.5rem, 4vw, 1rem);
+
+    letter-spacing: -0.08em;
   }
 
   .tagline {
-    font-size: 1rem;
+    margin-top: 38px;
+
+    font-size: 0.85rem;
+  }
+
+  .projects-link {
+    bottom: 90px;
+  }
+
+  .hero-footer {
+    left: 25px;
+    right: 25px;
+
+    bottom: 25px;
+
+    font-size: 7px;
   }
 }
 
