@@ -316,7 +316,10 @@ nav.links a:hover::after {
     transform: translateY(10px) rotate(2deg);
   }
 }
-
+.hero-tagline {
+  color: var(--bamboo);
+  font-size: small;
+}
 .hero-grid {
   position: relative;
   z-index: 2;
@@ -330,9 +333,8 @@ nav.links a:hover::after {
   color: var(--bamboo);
 }
 .hero-copy h1 {
-  margin-top: 1.1rem;
-  font-size: clamp(2.8rem, 6.4vw, 5.4rem);
-  color: var(--paper);
+  font-size: clamp(2.4rem, 4vw, 3.2rem);
+  line-height: 1.05;
 }
 .hero-copy h1 .line {
   display: block;
@@ -1100,138 +1102,296 @@ footer {
   color: rgba(244, 238, 222, 0.4);
 }
 
-/* ------------------------------------------------- RESPONSIVE ------------------------------------------- */
+/* =========================================================
+   RESPONSIVE
+   LA CABANE À SUSHI MS
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   TABLETTE
+   --------------------------------------------------------- */
+
 @media (max-width: 980px) {
-  .hero-grid {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-  .hero-photo {
-    max-width: 340px;
-  }
-  .intro-grid {
-    grid-template-columns: 1fr;
-  }
-  .intro-photo {
-    order: -1;
-  }
-  .info-grid {
-    grid-template-columns: 1fr;
-  }
-  .menu-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  nav.links {
-    display: none;
-  }
-  /* Base mobile */
-  * {
-    box-sizing: border-box;
-  }
-
-  body {
-    overflow-x: hidden;
-  }
-
-  .wrap {
-    width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  /* HEADER */
-  .site {
-    padding: 12px 0;
-  }
-
-  .nav-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-  }
-
-  .brand-logo {
-    width: 90px;
-    height: auto;
-  }
-
-  .links {
-    display: none;
-  }
-
-  .nav-cta {
-    font-size: 13px;
-    padding: 10px 14px;
-  }
-
-  .eyebrow {
-    width: 255px;
-  }
-  /* HERO */
   .hero {
-    padding-top: 40px;
-    padding-bottom: 70px;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
   }
 
   .hero-grid {
+    width: 100%;
+    max-width: 100%;
     display: block;
   }
 
   .hero-copy {
+    width: 100%;
+    max-width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* 1 — Titre */
+  .hero-copy h1 {
+    order: 1;
+    width: 100%;
+    max-width: 100%;
     text-align: center;
   }
 
-  .cuisto img {
+  /* 2 — Sous-titre */
+  .hero-copy .hero-tagline {
+    order: 2;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+  }
+
+  /* 3 — Message animé */
+  .hero-copy .typewriter {
+    order: 3;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  /* 4 — Photo */
+  .hero-copy .cuisto {
+    order: 4;
+
+    position: relative;
+    top: auto;
+    right: auto;
+
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+
+    margin: 20px 0 0;
+  }
+
+  .hero-copy .cuisto img {
+    display: block;
+
     width: 220px;
-    max-width: 80%;
-    margin-top: 70px;
-    margin-left: 40%;
+    max-width: 65%;
+    height: auto;
+
+    margin: 0 auto;
+  }
+
+  /* 5 — Bouton */
+  .hero-copy .hero-actions {
+    order: 5;
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+  }
+
+  /* ---------- INTRO ---------- */
+
+  .intro-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .intro-photo {
+    order: -1;
+  }
+
+  /* ---------- MENU ---------- */
+
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* ---------- INFO ---------- */
+
+  .info-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  /* ---------- FOOTER ---------- */
+
+  .footer-grid {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 670px) {
+  /* ---------- GLOBAL ---------- */
+
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+  }
+
+  * {
+    max-width: 100%;
+  }
+
+  .wrap {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* ---------- HEADER ---------- */
+
+  header.site {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px 0;
+  }
+
+  .nav-inner {
+    width: 100%;
+    max-width: 100%;
+    gap: 10px;
+  }
+
+  .brand-logo {
+    width: 85px;
+    max-width: 85px;
+  }
+
+  .nav-cta {
+    font-size: 0.68rem;
+    padding: 9px 16px;
+  }
+
+  /* ---------- HERO ---------- */
+
+  .hero {
+    width: 100%;
+    max-width: 100%;
+    min-height: 100svh;
+    padding-top: 90px;
+    padding-bottom: 60px;
+  }
+
+  .hero-grid {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .hero-copy {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
   }
 
   .eyebrow {
-    font-size: 12px;
-    letter-spacing: 0.08em;
+    width: auto;
+    max-width: 100%;
+    margin: 0 auto;
+    font-size: 10px;
+    letter-spacing: 0.1em;
   }
 
-  h1 {
-    font-size: clamp(38px, 10vw, 60px);
-    line-height: 1;
+  .hero-copy h1 {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 1rem;
+    font-size: clamp(2rem, 9vw, 3.2rem);
+    line-height: 1.05;
   }
+
+  .hero-copy p.sub {
+    width: 100%;
+    max-width: 34ch;
+    margin: 1.5rem auto 0;
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  /* ---------- CUISINIER ---------- */
+
+  .cuisto {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+    right: auto;
+    top: auto;
+  }
+
+  .cuisto img {
+    display: block;
+    width: 180px;
+    max-width: 65%;
+    height: auto;
+    margin: 45px auto 0;
+  }
+
+  /* ---------- TYPEWRITER ---------- */
 
   .typewriter {
-    font-size: 16px;
-    line-height: 1.6;
-    margin-top: 60px;
-    padding-bottom: 200px;
-    width: 50%;
-    margin-left: 5%;
-  }
-  .wrap.hero-grid {
-    height: 650px;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 50px;
+    margin: 25px auto 0;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.5;
   }
 
-  /* BOUTONS */
+  /* ---------- BOUTONS ---------- */
+
   .hero-actions {
+    width: 100%;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: stretch;
     gap: 12px;
-    margin-top: 50px;
-  }
-  .cuisto {
-    margin-top: 190px;
+    margin-top: 35px;
   }
 
   .btn {
     width: 100%;
+    max-width: 100%;
     justify-content: center;
   }
 
-  /* INTRO */
+  /* ---------- INTRO ---------- */
+
+  .intro {
+    padding: 5rem 0 4rem;
+  }
+
   .intro-grid {
     display: flex;
     flex-direction: column;
     gap: 30px;
+  }
+
+  .intro-photo {
+    width: 100%;
+    max-width: 100%;
   }
 
   .intro-photo img {
@@ -1239,16 +1399,50 @@ footer {
     height: auto;
   }
 
-  /* MENU */
+  .intro-copy {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .intro-copy p {
+    max-width: 100%;
+  }
+
+  /* ---------- NEWS ---------- */
+
+  .news {
+    width: 100%;
+    max-width: 100%;
+    padding: 22px;
+  }
+
+  .news-slider {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* ---------- MENU ---------- */
+
+  .menu {
+    padding: 5rem 0;
+  }
+
   .menu-head {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 20px;
   }
 
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
   .tabs {
-    display: flex;
+    width: 100%;
+    max-width: 100%;
     overflow-x: auto;
+    flex-wrap: nowrap;
     gap: 10px;
     padding-bottom: 10px;
     scrollbar-width: none;
@@ -1263,214 +1457,235 @@ footer {
     white-space: nowrap;
   }
 
-  /* INFO */
+  /* ---------- INFO ---------- */
+
+  .info {
+    padding: 5rem 0;
+  }
+
   .info-grid {
     display: flex;
     flex-direction: column;
+    gap: 25px;
   }
 
-  .contact-list .item {
-    align-items: flex-start;
+  .card {
+    width: 100%;
+    max-width: 100%;
+    padding: 1.8rem 1.5rem;
   }
 
-  /* CTA */
+  .hours-list li {
+    gap: 15px;
+  }
+
+  /* ---------- CTA ---------- */
+
   .cta-band {
-    text-align: center;
+    padding: 4rem 0;
   }
 
-  .cta-band .hero-actions {
-    margin-top: 25px;
+  /* ---------- FOOTER ---------- */
+
+  footer {
+    padding: 3rem 0 2rem;
   }
 
-  /* FOOTER */
   .footer-grid {
-    display: flex;
     flex-direction: column;
     gap: 30px;
   }
 
+  .footer-links {
+    gap: 2rem;
+  }
+
   .footer-bottom {
-    display: flex;
     flex-direction: column;
     gap: 10px;
   }
-  .cuisto img {
-    margin-top: 40px;
-    margin-left: 40%;
-  }
-}
-@media (max-width: 670px) {
-  .menu-grid {
-    grid-template-columns: 1fr;
-  }
-  .facts {
-    grid-template-columns: 1fr 1fr;
-  }
-  .footer-grid {
-    flex-direction: column;
-  }
-  .hero-copy p.sub {
-    max-width: none;
-  }
-  .dish .row::before,
-  .dish .row::after {
-    display: none;
-  }
-  .cuisto img {
-    position: inherit;
-    margin-top: 40px;
-    margin-left: 50%;
-  }
-  .typewriter {
-    margin-top: 70px;
-    width: 40%;
-    margin-left: 8%;
-  }
-}
-/* =====================================
-   MOBILE FIRST - LA CABANE À SUSHI MS
-===================================== */
-@media (max-width: 500px) {
-  .menu-grid {
-    grid-template-columns: 1fr;
-  }
-  .facts {
-    grid-template-columns: 1fr 1fr;
-  }
-  .footer-grid {
-    flex-direction: column;
-  }
-  .hero-copy p.sub {
-    max-width: none;
-  }
-  .dish .row::before,
-  .dish .row::after {
-    display: none;
-  }
-  .typewriter {
-    margin-top: 70px;
-    width: 30%;
-    margin-left: 4%;
-    font-size: 14px;
-  }
-  .cuisto img {
-    position: inherit;
-    margin-top: 100px;
-    margin-left: 55%;
-    width: 30%;
-  }
 }
 
-@media (max-width: 455px) {
-  .menu-grid {
-    grid-template-columns: 1fr;
-  }
-  .facts {
-    grid-template-columns: 1fr 1fr;
-  }
-  .footer-grid {
-    flex-direction: column;
-  }
-  .hero-copy p.sub {
-    max-width: none;
-  }
-  .dish .row::before,
-  .dish .row::after {
-    display: none;
-  }
-  .typewriter {
-    margin-top: 250px;
-    width: 100%;
-    margin-left: 2%;
-    font-size: 14px;
-  }
-  .cuisto img {
-    position: inherit;
-    margin-top: 0px;
-    margin-left: 40%;
-    width: 40%;
-  }
-  .hero-actions {
-    margin-top: -80px;
-  }
-  .brand-logo {
-    width: 35%;
-  }
-  .eyebrow {
-    margin-top: 30px;
-    font-size: 10px;
-  }
-  .hero-copy h1 {
-    font-size: clamp(2rem, 8vw, 3.2rem);
-    line-height: 1.05;
-  }
-  .hero h1 {
-    font-size: clamp(1.5rem, 5.5vw, 2.5rem);
-  }
-}
+/* ---------------------------------------------------------
+   TRÈS PETITS ÉCRANS
+   320px → 375px
+   --------------------------------------------------------- */
+
 @media (max-width: 375px) {
-  .menu-grid {
-    grid-template-columns: 1fr;
-  }
-  .facts {
-    grid-template-columns: 1fr 1fr;
-  }
-  .footer-grid {
-    flex-direction: column;
-  }
-  .hero-copy p.sub {
-    max-width: none;
-  }
-  .dish .row::before,
-  .dish .row::after {
-    display: none;
-  }
-  .typewriter {
-    margin-top: 220px;
+  /* ---------- GLOBAL ---------- */
+
+  html,
+  body {
     width: 100%;
-    margin-left: 2%;
-    font-size: 14px;
+    max-width: 100%;
+    min-width: 320px;
+    overflow-x: hidden;
   }
-  .cuisto img {
-    position: inherit;
-    margin-top: 10px;
-    margin-left: 50%;
-    width: 30%;
+
+  .wrap {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 12px;
+    padding-right: 12px;
   }
-  .hero-actions {
-    margin-top: -80px;
+
+  /* ---------- HEADER ---------- */
+
+  header.site {
+    padding: 8px 0;
   }
+
+  .nav-inner {
+    gap: 8px;
+  }
+  nav.links {
+    gap: 1.5rem;
+  }
+
   .brand-logo {
-    width: 35%;
+    width: 65px;
+    max-width: 75px;
   }
-  .eyebrow {
-    margin-left: 25%;
-    font-size: 8px;
+  .brand-logo img {
+    width: 75px;
   }
-  .hero-copy h1 {
-    font-size: clamp(2rem, 8vw, 3.2rem);
-    line-height: 1.05;
-  }
+
   .nav-cta {
     font-size: 8px;
-    padding: 8px 52px;
+    letter-spacing: 0.04em;
+    padding: 8px 14px;
   }
+
+  /* ---------- HERO ---------- */
+
+  .hero {
+    width: 100%;
+    max-width: 100%;
+    min-height: 100svh;
+    padding-top: 75px;
+    padding-bottom: 45px;
+  }
+
+  .hero-grid {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-copy {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .eyebrow {
+    width: auto;
+    max-width: 100%;
+    font-size: 8px;
+    letter-spacing: 0.08em;
+  }
+
+  .hero-copy h1,
   .hero h1 {
-    font-size: clamp(0.5rem, 5.5vw, 2.5rem);
-  }
-}
-
-/* =====================================
-   TABLET
-===================================== */
-
-@media (min-width: 768px) {
-  .hero-copy h1 {
-    font-size: clamp(2rem, 8vw, 3.2rem);
+    width: 100%;
+    max-width: 100%;
+    font-size: clamp(1.7rem, 8vw, 2.5rem);
     line-height: 1.05;
   }
-}
 
+  .hero-copy p.sub {
+    width: 100%;
+    max-width: 30ch;
+    margin: 1.2rem auto 0;
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  /* ---------- CUISINIER ---------- */
+
+  .cuisto {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .cuisto img {
+    width: 150px;
+    max-width: 55%;
+    margin: 35px auto 0;
+  }
+
+  /* ---------- TYPEWRITER ---------- */
+
+  .typewriter {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 45px;
+    margin: 20px auto 0;
+    padding: 0;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  /* ---------- ACTIONS ---------- */
+
+  .hero-actions {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 25px;
+    gap: 10px;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 100%;
+    padding: 0.85rem 1rem;
+    font-size: 0.7rem;
+  }
+
+  /* ---------- INTRO ---------- */
+
+  .intro {
+    padding: 4rem 0 3rem;
+  }
+
+  .intro-grid {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .intro-photo,
+  .intro-photo img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .news {
+    padding: 18px;
+  }
+
+  /* ---------- INFO ---------- */
+
+  .card {
+    padding: 1.5rem 1.2rem;
+  }
+
+  /* ---------- FOOTER ---------- */
+
+  .footer-links {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  /* ---------- AUCUNE LARGEUR FIXE ---------- */
+
+  img,
+  svg,
+  video,
+  iframe {
+    max-width: 100%;
+  }
+}
 /* ================================
    Agency Signature
 ================================ */
@@ -1568,4 +1783,111 @@ footer {
   letter-spacing: 0.06em;
 
   opacity: 0.55;
+}
+/* =========================
+   HEADER - PETITS ÉCRANS
+   ========================= */
+
+@media (max-width: 550px) {
+  /* Masquer le bouton Commander */
+  .nav-cta {
+    display: none;
+  }
+
+  /* Réduire les liens du menu */
+  .nav-links {
+    gap: 10px;
+  }
+
+  .nav-links a {
+    font-size: 11px;
+    white-space: nowrap;
+  }
+}
+/* =====================================
+   TRÈS PETITS ÉCRANS
+   ===================================== */
+@media (max-width: 375px) {
+  .nav-inner {
+    padding: 8px 10px;
+    gap: 8px;
+  }
+
+  .brand-logo {
+    max-width: 35px;
+  }
+
+  .nav-cta {
+    padding: 7px 12px;
+    font-size: 11px;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-links a {
+    font-size: 11px;
+  }
+}
+@media (max-width: 325px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .hero {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .wrap {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  /* Évite que le bloc cuisto de 450px
+     influence la mise en page mobile */
+  .cuisto {
+    width: 100%;
+    max-width: 100%;
+    right: 0;
+    height: auto;
+  }
+
+  .cuisto img {
+    width: 30%;
+    max-width: 120px;
+    margin-left: 38%;
+  }
+
+  /* Le texte ne doit jamais dépasser */
+  .typewriter {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Header adapté au 320px */
+  .nav-inner {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .brand-logo {
+    width: 40px;
+    margin-left: -5px;
+  }
+
+  .nav-cta {
+    padding: 8px 20px;
+    font-size: 8px;
+  }
 }
